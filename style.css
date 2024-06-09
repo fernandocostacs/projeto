@@ -86,17 +86,45 @@ body *{
 
     position: absolute;
     z-index: 1;
-    left: 0;
+    left:0;
     top: 50%;
     transform: translateY(-50%);
+
+    animation: movimento_botao_black 0.3s;
     
+}
+#switch button:hover{
+    outline: 8px solid var(--highlight-color);
 }
 
 .light #switch button{
 
-right: 0;
-left: initial;
+    animation: movimento_botao_light 0.4s forwards;
+
+/*
+    right: 0;
+left: initial;*/
+
 }
+/* animação do botao */
+@keyframes movimento_botao_light{
+
+    from{
+        left: 0;
+    }
+    to{
+        left: 50%;
+    }
+}
+@keyframes movimento_botao_black{
+    from{
+        left: 50%;
+    }
+    to{
+        left: 0;
+    } 
+}
+
 #switch span{
     display: block;
     width: 64px ;
@@ -197,3 +225,5 @@ footer a{
         --bg-url: url(./assets/bg-desktop-light.jpg);
     }
 }
+
+
